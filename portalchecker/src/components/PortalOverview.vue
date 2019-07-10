@@ -1,22 +1,20 @@
 <template>
-  <div id="app">
+  <div class="app">
     <div class="wrapper">
-      <p> First Content </p>
-      <p> Second Content</p>
-      <p> Third Content </p>
-      <p> Fourth Content</p>
+        <p> First Content </p>
+        <p> Second Content</p>
+    </div>
+    <div  class="wrapper">
+        <p> First Content </p>
+        <p> Second Content</p>
     </div>
   </div>
-
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
+  export default {
+    name: 'PortalOverview'
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -26,19 +24,34 @@ html, body, #app {
   margin: 0;
 }
 
-#app {
+.app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
 }
+
+@media screen and (max-width: 500px){
+    .wrapper {
+        flex-direction: column;
+    }
+}
+
 .wrapper {
   flex: 1 0 auto;
+  display: flex;
+  justify-content: space-around;
 }
+
+p {
+    display: block;
+}
+
+
 footer {
   background: #ccc;
   padding: 20px;
