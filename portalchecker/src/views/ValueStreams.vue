@@ -1,18 +1,18 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <Portal/>
+    <PortalOverview/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Portal from '@/components/PortalSelector.vue'
+import PortalOverview from '@/components/PortalOverview.vue'
 
 export default {
-  name: 'home',
+  name: 'portal',
   components: {
-    Portal
+    PortalOverview
   }
 }
 </script>
