@@ -11,6 +11,17 @@
   </div>
 </template>
 
+<script>
+import PortalSelector from './components/PortalSelector'
+
+export default {
+  name: 'App',
+  components: {
+    PortalSelector
+  }
+}
+</script>
+
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

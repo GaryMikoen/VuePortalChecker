@@ -3,16 +3,15 @@
     <form>
       <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-          <h1> Choose your portal</h1>
+          <h1> Portal Selector </h1>
           <hr>
           <div class="form-group">
             <label for="portal">Portal </label>
             <input 
                   type="text"
-                  id="portal"
                   class="form-control"
                   placeholder="(format: c##)"
-                  v-model="portal">
+                  v-model="portal.name">
           </div>
         </div>
       </div>
@@ -21,21 +20,19 @@
           <label for="portaltype">
             <input 
                   type="radio"
-                  name="portaltype"
                   value="CP"
-                  v-model="portaltype"> CP
+                  v-model="portal.type"> CP
             <input
                   type="radio"
-                  name="portaltype"
                   value="EP"
-                  v-model="portaltype"> EP
+                  v-model="portal.type"> EP
           </label>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
           <button 
-              class="btn btn-primary"> Submit!
+              class="btn btn-primary" @click="changePortal(portal.name, portal.type)"> Submit!
           </button>
         </div>
       </div>
@@ -48,11 +45,20 @@
     name: 'PortalOverview',
     data() {
       return {
-        portal: " ",
-        portaltype: " "
+        portal: {
+          name: "",
+          type: ""
+        }
+        
+      }
+    },
+    methods:{
+      changePortal(portalName, portalType ) {
+          this.$store.dispatch("changePortal", {portalName: portalName, portalType: portalType});
       }
     }
   }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
