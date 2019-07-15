@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h2>Chosen portal Name and Type</h2>
         <h2>{{getName}}</h2>
         <h2>{{getType}}</h2>
     </div>

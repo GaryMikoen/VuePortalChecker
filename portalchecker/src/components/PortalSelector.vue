@@ -1,17 +1,24 @@
 <template>
-  <div class="container">
+  <div class="container"> 
     <form>
       <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
           <h1> Portal Selector </h1>
           <hr>
+<!--          
+          <div v-if="portal.errors.length">
+              <b>Please correct the following error:</b>
+              <b>{{portal.errors}}</b>
+          </div>
+-->
           <div class="form-group">
             <label for="portal">Portal </label>
             <input 
                   type="text"
                   class="form-control"
-                  placeholder="(format: c##)"
+                  placeholder="(format: C##)"
                   v-model="portal.name">
+            <p v-if="portal.nameSpelling">PortalName must be in Format C##</p>
           </div>
         </div>
       </div>
@@ -46,16 +53,39 @@
     data() {
       return {
         portal: {
-          name: "",
-          type: ""
+          name: null,
+          type: null,
+          nameSpelling: false,
+          typeChosen: false,
+          errors: []
         }
-        
       }
     },
     methods:{
       changePortal(portalName, portalType ) {
+        var pattern = /^[C][0-9]{2}[:.,-]?$/
+        if(this.portal.name.match(pattern)) {
+          this.portal.nameSpelling = false;
           this.$store.dispatch("changePortal", {portalName: portalName, portalType: portalType});
+        } else{
+          this.portal.nameSpelling = true;
+        }
       }
+/*      ,
+      checkForm() {
+        var pattern = /^[C][0-9]{2}[:.,-]?$/
+        if(this.portal.name.match(pattern)) {
+          this.portal.nameSpelling = false;
+        } else{
+          this.portal.nameSpelling = true;
+        }
+*/
+/*
+        this.portal.errors = [];
+        if(!this.portal.name) this.portal.errors.push("Name required.");
+        if(!this.portal.type) this.portal.errors.push("Type required.");
+*/
+      
     }
   }
 
