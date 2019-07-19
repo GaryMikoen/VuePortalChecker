@@ -1,12 +1,12 @@
 <template>
   <div class="app">
     <div class="wrapper">
-        <p> First Content </p>
-        <p> Second Content</p>
+        <p>First Content</p>
+        <p>Second Content</p>
     </div>
-    <div  class="wrapper">
-        <p> First Content </p>
-        <p> Second Content</p>
+    <div class="wrapper">
+        <p>First Content</p>
+        <p>Second Content</p>
     </div>
   </div>
 </template>

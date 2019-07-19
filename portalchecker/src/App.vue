@@ -11,31 +11,37 @@
 </template>
 
 <script>
-import PortalSelector from './components/PortalSelector'
 
 export default {
   name: 'App',
   components: {
-    PortalSelector
+
   }
 }
 </script>
 
 <style>
+body {
+  margin: 0;
+  background-color: #f9f9f9;
+}
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  
 }
 #nav {
   padding: 30px;
+  background-color:#00716B;
 }
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #EDF7F7;
 }
 
 #nav a.router-link-exact-active {
