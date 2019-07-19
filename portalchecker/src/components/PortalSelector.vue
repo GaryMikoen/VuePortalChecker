@@ -87,11 +87,54 @@ form {
   padding: 20px 10px;
   margin: 20px 0px 0px 0px;
   border: 1px solid #ccc;
-  border-radius: 3px;
   width: 25%;
   box-sizing: border-box;
   text-align: center;
   font-size: 0.8em;
+}
+
+.error {
+  color: #ff0000;
+}
+
+.switch-field {
+  margin: 0 auto;
+  width: 25%;
+  background-origin: border-box;
+}
+
+.half {
+  display: inline-block;
+  width: 50%;
+}
+
+.switch-field input {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+}
+
+.switch-field label {
+  display: block;
+  padding: 20px 20px 20px 20px;
+  background-color: #edf7f7;
+  color: #00716b;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 0.5em;
+  text-align: center;
+  transition: all 0.1s ease-in-out;
+}
+
+.switch-field input:not(:checked) + label:hover {
+  cursor: pointer;
+  color: #00857A;
+  border-color: #00857A;
+}
+
+.switch-field input:checked + label {
+  background-color: #00716b;
+  color: #edf7f7;
+  box-shadow: none;
 }
 
 .button {
@@ -106,50 +149,7 @@ form {
 
 .button:hover {
   cursor: pointer;
-}
-
-.error {
-  color: #ff0000;
-}
-
-.switch-field {
-  width: 25%;
-  margin: 0 auto;
-  background-origin: border-box;
-}
-
-.half {
-  display: inline-block;
-  width: 50%;
-}
-
-.switch-field input {
-  position: absolute;
-  height: 1px;
-  width: 1px;
-
-}
-
-.switch-field label {
-  padding: 20px 20px 20px 20px;
-  background-color: #edf7f7;
-  color: #00716b;
-  font-size: 0.5em;
-  text-align: center;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
-  transition: all 0.1s ease-in-out;
-  display: block;
-}
-
-.switch-field label:hover {
-  cursor: pointer;
-}
-
-.switch-field input:checked + label {
-  background-color: #00716b;
-  color: #edf7f7;
-  box-shadow: none;
+  background-color:#ffe263
 }
 
 </style>
